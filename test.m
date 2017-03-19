@@ -29,16 +29,3 @@ for sch = 1:k
     display(['estimated ',num2str(sch),' Schatten norm assuming graph based sampling: ',num2str(esTr_GR(sch))])
     fprintf('\n')
 end
-
-
-
-% % Clique graph sampling
-% vertices = zeros(1,n);
-% vertices(1:p1) = 1;
-% vertices(randperm(n)) = vertices;
-% oAn = A.*(vertices'*vertices);
-% oAnc = oAn; oAnc(oAn~=0) = 1; % for counting number of cycles
-% t1 = sch_est_given(oAn,sch);
-% t2 = sch_est_given(oAnc,sch);
-% t1(t2==0) = 0;
-% esTr(nprob,nrank,nrun) = nansum(t1.*(sch_comp(:,nprob,nrank,nrun)./t2));
